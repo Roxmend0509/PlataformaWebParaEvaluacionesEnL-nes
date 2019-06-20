@@ -1,0 +1,38 @@
+<div class="content datos">
+  <div class="datos">
+    <!-- 
+      Aqui necesitas poner un *ngIf sobre los atributos dado que el objeto
+      "completos" esta undefined al cargar la pagina, y si lo dejas así tronará
+    -->
+    <h1 *ngIf="completos" class="titulo">{{completos.name}} ({{completos.key}})</h1>
+    <h6 *ngIf="completos" class="h6">{{completos.description}}</h6>
+    <h6 *ngIf="completos" class="h6">{{completos.duration}}</h6>
+
+  </div>
+  <br>
+
+  <!-- Mismo caso aqui, truena si mandas a llamar el objeto porque no esta definido -->
+  <div *ngIf="completos">
+    <!-- Aquí tenias declarado "let index" en lugar de "let i = index"
+    por lo cual nunca podias tomar el valor del indice -->
+    <div *ngFor="let pregunta of completos.preguntas; let i = index">
+      <label type="text" class="h5">{{pregunta.textquestion}}</label>
+      <form>
+        <div *ngFor="let respuesta of pregunta.respuestas">
+          <!-- Aqui se encerro el radiobutton dentro del label, se les pone el mismo id para
+          que no importa donde hagas click (label o radio button) se seleccione.
+          En el input como su valor (el que se asignara cuando lo selecciones) se escoge 
+          el id de la respuesta, y al ngModel se le asigna esa respuesta basandose en 
+          el indice (variable i). -->
+          <label for="respuesta={{respuesta.textanswer}}">
+            <input id="respuesta={{respuesta.textanswer}}" [value]="respuesta.id" type="radio" name="respuesta"
+              [(ngModel)]="radioSelected[i]" >
+              {{respuesta.textanswer}}
+          </label>
+        </div>
+        <br>
+      </form>
+    </div>
+  </div>
+  <button class="btn btn-success" (click)="enviar()" >Finalizar</button>
+</div>

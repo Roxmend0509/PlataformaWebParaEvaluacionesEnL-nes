@@ -1,0 +1,24 @@
+<!--
+   Archivo .html donde se encontrara el formulario
+  para poder editar los alumnos mal ingresados
+  o se desea actualizar los datos
+-->
+
+<div class="content">
+    <form>
+      <h1 class="display-1">Editar Respuesta</h1>
+      <input class="input" type="text" placeholder="Respuesta Sin Titulo" 
+      style="margin-bottom: 5px;" [(ngModel)]="respuesta.textanswer" name="textquestion"
+      required>
+    <br>
+    <input class="input" type="text" placeholder="Respuesta Sin Titulo" 
+    style="margin-bottom: 5px;" [(ngModel)]="respuesta.AnswerCorrect" name="AnswerCorrect"
+    required> 
+      <br>
+      <button class="btn btn-success" style="margin-right: 5px;" (click)="editAnswer()">
+        Actualizar Respuesta
+      </button>
+      <br>
+      <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+    </form>
+    </div>

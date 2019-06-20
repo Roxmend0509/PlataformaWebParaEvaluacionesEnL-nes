@@ -1,0 +1,36 @@
+<div class="container datos text-center">
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card text-white bg-light mb-3">
+            <div class="card-header text-center">
+                <div *ngFor="let alumno of alumnos">
+                <h2 type="text" class="h5">Calificaciones de {{alumno.name}}</h2>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div *ngFor="let calificacion of calificaciones">
+            <div class="datos">
+                <div *ngIf="calificaciones">
+                    <div *ngFor="let examen of calificacion.examenes">
+                        <div class="card text-white bg-primary mb-3 text-center">
+                            <div class="card-header">
+                              <h1 type="text">{{examen.name}} ({{examen.key}})</h1>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li><h1>Calificación: {{calificacion.calificacion}}</h1></li>
+                                <li><h1>{{calificacion.aprobation}}</h1></li>
+                            </ul>
+                          </div>
+                          <br>
+                      </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>
+  <button class="btn btn-success" onClick="history.back()" >Regresar</button>
+  </div>

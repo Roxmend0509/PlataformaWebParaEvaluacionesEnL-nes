@@ -1,0 +1,28 @@
+
+<div class="content">
+    <h1 class="display-1 titulo">{{title}}</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+          <th scope="col">ID</th>
+        <th scope="col">ID Pregunta</th>
+        <th scope="col">ID Respuesta</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let clave of claves">
+        <td>{{clave.id}}</td>
+        <td>{{clave.question_id}}</td>
+        <td>{{clave.answer_id}}</td>
+        <td>
+            <button class="btn btn-danger btn-sm" (click)="delete(clave.id)" 
+            data-toggle="tooltip" data-placement="right" title="Eliminar">
+              <i class="fas fa-trash-alt fa-lg"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success btn-lg"  onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </div>
+  

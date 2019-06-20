@@ -1,0 +1,31 @@
+<!--
+  Archivo .html donde estan la estructura
+  del formulario para añadir Respuestas 
+-->
+<div class="content">
+  <form #AddRespuestaForm=ngForm>
+    <h1 class="display-1">Añadir Respuesta a la Pregunta</h1>
+
+    <h4>ID Pregunta:</h4>
+    <select class="combo" name="id" id="id" [(ngModel)]="respuesta.question_id" required>
+        <option value="{{id_question}}">{{id_question}}</option>
+      </select>
+  <br>
+    <input class="input" type="text" placeholder="Respuesta Sin Titulo" style="margin-bottom: 5px;" [(ngModel)]="respuesta.textanswer" name="textquestion"
+    required>
+  <br>
+  <h4>Pregunta Correcta:</h4>
+    <select class="combo" name="id" id="id" [(ngModel)]="respuesta.AnswerCorrect" required>
+        <option value="CORRECTA">CORRECTA</option>
+        <option value="INCORRECTA">INCORRECTA</option>
+      </select>
+      <br>
+    <button class="btn btn-success" style="margin-right: 5px;" (click)="addAnswer()"
+    [disabled]="!AddRespuestaForm.valid">
+      Guardar Pregunta
+    </button>
+    <br>
+    <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </form>
+  </div>
+  

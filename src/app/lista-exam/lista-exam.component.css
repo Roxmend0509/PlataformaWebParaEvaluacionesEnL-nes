@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Keep;
+    src: url(/assets/font/KeepCalm-Medium.ttf);
+  }
+
+  
+  @font-face {
+    font-family: Lato-Bold;
+    src: url(/assets/font/Lato-Bold.ttf);
+  }
+
+.content{
+    padding: 5rem;
+    text-align: center;
+    
+}
+
+.table{
+    position: relative;
+    font-family: Lato-Bold;
+    text-align: center;
+    box-shadow: 5px 5px 5px black;
+}
+
+table td,table th{
+    text-align: center;
+}
+
+
+.btn{
+    font-family: Lato-Bold;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.titulo{
+    color: white;
+    font-family: Keep;
+    margin-bottom: 20px;
+}
+
+td{
+    color: black;
+}

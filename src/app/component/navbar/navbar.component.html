@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a *ngIf="isAdmin()" class="navbar-brand" [routerLink]="['home']">ADMINISTRADOR</a>
+    <a *ngIf="isStudent()" class="navbar-brand" [routerLink]="['home']">ACADEMIA TI</a>
+    <button *ngIf="isAdmin()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <button *ngIf="isStudent()" class="navbar-toggler" type="button" 
+    data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" 
+    aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" *ngIf="isAdmin()">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        >
+          Alumnos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['singup']">Añadir Alumno</a>
+          <a class="dropdown-item" [routerLink]="['alumno']">Lista Alumnos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+        >
+          Examenes
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" [routerLink]="['formExamen']">Nuevo Examen</a>
+          <a class="dropdown-item" [routerLink]="['listaExamen']">Lista de Exámenes</a>
+        </div>
+      </li>
+    </ul>
+      
+   
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" *ngIf="isStudent()">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          >
+            Exámenes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink='/alumnoLista/{{id}}'>Exámenes Pendientes</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          >
+            Calificaciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink='/calificacionesExa/{{id}}'>Calificaciones</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
+
+  <div class="float-right"> 
+      <a class="btn btn-success" routerLink="login" *ngIf="!loggedIn">Iniciar Sesión</a>
+      <a class="btn btn-danger" href="#" (click)="logout($event)" *ngIf="loggedIn">Cerrar Sesión</a>
+      <a class="btn btn-info" routerLink="profile" *ngIf="loggedIn" >Perfil</a>
+    </div>
+    
+</nav>

@@ -1,0 +1,26 @@
+<div class="content datos">
+  <h1 class="display-1 titulo">LISTA DE EXÁMENES PENDIENTES</h1>
+    <table class="table" style="width: 100%;" >
+      <thead class="thead-dark">
+        <tr>
+            <th scope="col">Examen</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Duración</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let exam of exams">
+          <td>{{exam.name}}</td>
+          <td>{{exam.description}}</td>
+          <td>{{exam.duration}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" style="margin: 2px;"
+            data-toggle="tooltip" data-placement="right" title="Presentar Examen" routerLink='/presentarExamen/{{user_id}}/{{exam.id}}'>
+            <i class="fas fa-book"></i> Presentar Examen</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-success btn-lg"  onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </div>

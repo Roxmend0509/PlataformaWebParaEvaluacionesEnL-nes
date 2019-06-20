@@ -1,0 +1,20 @@
+<div class="content">
+  <form>
+    <h1 class="display-1">{{title}}</h1>
+    <h4>ID Pregunta:</h4>
+    <select class="combo" name="id" id="id" [(ngModel)]="clave.question_id" required>
+        <option value="{{id_question}}">{{id_question}}</option>
+      </select>
+  <br>
+  <h4>ID Respuesta:</h4>
+  <select class="combo" name="id" id="id" [(ngModel)]="clave.answer_id" required>
+    <option value="{{id_answer}}">{{id_answer}}</option>
+  </select>
+<br>
+    <button class="btn btn-success" style="margin-right: 5px;" (click)="addClave()">
+      Guardar Respuesta Correcta
+    </button>
+    <br>
+    <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </form>
+  </div>

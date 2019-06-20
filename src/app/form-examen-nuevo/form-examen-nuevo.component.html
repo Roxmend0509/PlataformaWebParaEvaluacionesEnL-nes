@@ -1,0 +1,39 @@
+<!--
+  Archivo .html donde estan la estructura
+  del formulario para añadir Examenes
+-->
+
+<div class="content">
+  <form #AddExamenForm=ngForm>
+      <h1 class="display-1">{{title}}</h1>
+  <input class="input" contenteditable="true" placeholder="Examen sin título"
+  id="name"  name="name" [(ngModel)]="examen.name" style="margin-bottom:5px;"
+  required>
+  <br>
+  <textarea class="input" contenteditable="true"
+  id="description" maxlength="572" name="description" style="margin-bottom:5px;"
+   [(ngModel)]="examen.description" placeholder="Descripción del examen (572 palabras aprox.)"
+   required>
+  </textarea>
+  <br>
+  <input class="input" contenteditable="true" placeholder="Clave del Examen"
+  id="key"  name="key" [(ngModel)]="examen.key" style="margin-bottom:5px;"
+  required>
+  <br>
+  <input type="time" class="input time" contenteditable="true"
+  id="duration"  name="duration" [(ngModel)]="examen.duration" 
+  style="margin-bottom:5px;"
+  required>
+  <br>
+  <button class="btn btn-success" (click)="addExam()" style="margin-top:5px;"
+  [disabled]="!AddExamenForm.valid">
+    Guardar Nuevo Examen
+  </button>
+  <br>
+  <button class="btn btn-primary" onClick="history.back()" style="margin-top:5px;"><i class="fas fa-arrow-left"></i> Regresar
+    </button>
+</form>
+
+
+
+</div>

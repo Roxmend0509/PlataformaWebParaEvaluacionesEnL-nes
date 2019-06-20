@@ -1,0 +1,34 @@
+<div class="content">
+  <div class="card float-center">
+    <div class="card-header"><h1 class="display-1 titulo">Iniciar Sesión</h1></div>
+    <div class="card-body">
+      <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+        <div class="alert alert-danger" [hidden]="!error">
+          {{error}}
+        </div>
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-10 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email"
+            [(ngModel)]="form.email" required>
+          </div> 
+        </div>
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-10 col-form-label">Contraseña</label>
+          <div class="col-sm-10">
+            <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Contraseña"
+            [(ngModel)]="form.password" required>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary" (disable)="!loginForm.valid">Aceptar</button>
+          </div>
+        </div>
+        <small class="float-right">
+          <a routerLink="/request-password-reset">Olvide mi Contraseña</a>
+        </small>
+      </form>
+    </div>
+  </div>
+</div>

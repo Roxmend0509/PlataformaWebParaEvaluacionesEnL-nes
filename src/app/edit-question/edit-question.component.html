@@ -1,0 +1,25 @@
+<!--
+  Archivo .html donde se encontrara el formulario
+  para poder editar los alumnos mal ingresados
+  o se desea actualizar los datos
+-->
+
+
+<div class="content">
+  <form #AddPreguntaForm=ngForm>
+    <h1 class="display-1">Editar Pregunta</h1>
+    <input class="input" type="text" placeholder="Pregunta Sin Titulo"
+     style="margin-bottom: 5px;" [(ngModel)]="pregunta.textquestion" name="textquestion"
+    required>
+  <br>
+    <button class="btn btn-success" style="margin-right: 5px;" (click)="editQuestion()"
+    [disabled]="!AddPreguntaForm.valid">
+      Guardar Pregunta
+    </button>
+    <br>
+    <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </form>
+  </div>
+  
+  
+  

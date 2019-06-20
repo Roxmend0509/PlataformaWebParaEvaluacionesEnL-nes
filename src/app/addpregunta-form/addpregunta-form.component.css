@@ -1,0 +1,57 @@
+/*
+  En este archivo addpregunta-form.component.css
+  para darle estilos al formulario para añadir
+  una pregunta nueva
+*/
+
+@font-face {
+    font-family: Anton;
+    src: url(/assets/font/Anton.ttf);
+  }
+
+  @font-face {
+    font-family: Lato-Bold;
+    src: url(/assets/font/Lato-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: Keep;
+    src: url(/assets/font/KeepCalm-Medium.ttf);
+  }
+
+.content{
+    padding: 3rem;
+}
+
+form{
+  position: relative;
+  left: 25%;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 50%;
+  box-shadow: 5px 5px 5px black;
+}
+
+.combo{
+  padding: 5px;
+  margin-bottom: 1rem;
+}
+
+.input{
+  color:black;
+}
+
+.input::placeholder{
+  color: #5a5858;
+}
+
+.input:hover{
+  box-shadow: 2px 2px 2px rgb(146, 158, 158);
+}
+
+.btn:hover{
+  box-shadow: 2px 2px 2px rgb(146, 158, 158);
+}
+

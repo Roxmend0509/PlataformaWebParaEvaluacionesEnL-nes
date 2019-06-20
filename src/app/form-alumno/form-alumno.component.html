@@ -1,0 +1,20 @@
+<div class="content">
+  <form #AddStudentForm=ngForm>
+      <h1 class="display-1">{{title}}</h1>
+  <input class="input" contenteditable="true" placeholder="Nombre"
+  id="name"  name="name" [(ngModel)]="alumno.name" style="margin-bottom:5px;"
+  required>
+  <br>
+  <input class="input" contenteditable="true" placeholder="Email"
+  id="email"  name="email" [(ngModel)]="alumno.email" style="margin-bottom:5px;"
+  required>
+  <br>
+  <button class="btn btn-success" (click)="addUser()" style="margin-top:5px;"
+  [disabled]="!AddStudentForm.valid">
+    Guardar Nuevo Alumno
+  </button>
+  <br>
+  <button class="btn btn-primary" onClick="history.back()" style="margin-top:5px;"><i class="fas fa-arrow-left"></i> Regresar
+    </button>
+</form>
+</div>

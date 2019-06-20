@@ -1,0 +1,38 @@
+<!--
+  En este archivo .html 
+  es el html de la lista de los alumnos
+  donde esta creada una tabla con 
+  su diferente clasificación como es
+  el id, nombre, apellido, correo,
+  telefono y el no. de control.
+  Al igual que los botones que es editar
+  y eliminar.
+-->
+
+<div class="content">
+    <h1 class="display-1 titulo">Añadir Alumno al Examen</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let alumno of alumnos">
+        <td>{{alumno.name}}</td>
+        <td>{{alumno.email}}</td>
+        <td>
+          <button class="btn btn-success btn-sm" 
+          data-toggle="tooltip" data-placement="right" title="Añadir Alumno"
+          routerLink='/AddAlumnosExam/{{id_exam}}/{{alumno.id}}' >
+          <i class="fas fa-plus-square fa-lg"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success btn-lg" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </div>
+
+ 

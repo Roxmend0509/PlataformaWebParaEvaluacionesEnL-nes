@@ -1,0 +1,36 @@
+<div class="content text-center">
+  <h1 class="display-1 titulo">LISTA DE ALUMNOS</h1>
+    <form class="form-inline my-2 my-lg-0">
+        <i class="fas fa-search fa-lg" style="margin-right:10px;"></i>
+        <input class="form-control mr-sm-2 input" type="search" 
+        placeholder="Ingrese un Correo" aria-label="Search"
+        style="width: 70%;">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <br>
+    <table class="table" style="width: 100%;">
+      <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo Electronico</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alumno of alumnos">
+      <td>{{alumno.name}}</td>
+      <td>{{alumno.email}}</td>
+      <td>
+      <button class="btn btn-danger btn-sm" style="margin: 2px;" (click)="delete(alumno.id)"
+      data-toggle="tooltip" data-placement="right" title="Eliminar">
+        <i class="fas fa-trash-alt fa-lg"></i></button>
+    </td>
+  </tr>
+</tbody>
+</table>
+<button class="btn btn-success btn-lg"  onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+
+</div>
+
+
+

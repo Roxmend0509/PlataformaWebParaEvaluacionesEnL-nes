@@ -1,0 +1,20 @@
+<div class="content">
+  <form>
+    <h1 class="display-1">{{title}}</h1>
+    <h4>ID Examen:</h4>
+    <select class="combo" name="id" id="id" [(ngModel)]="alumno.examen_id" required>
+        <option value="{{id_exam}}">{{id_exam}}</option>
+      </select>
+  <br>
+  <h4>ID Alumno:</h4>
+  <select class="combo" name="id" id="id" [(ngModel)]="alumno.user_id" required>
+    <option value="{{id}}">{{id}}</option>
+  </select>
+<br>
+    <button class="btn btn-success" style="margin-right: 5px;" (click)="addUser()">
+      Guardar Alumno
+    </button>
+    <br>
+    <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+  </form>
+  </div>

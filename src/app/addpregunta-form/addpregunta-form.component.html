@@ -1,0 +1,25 @@
+<!--
+  Archivo .html donde estan la estructura
+  del formulario para añadir Preguntas
+-->
+
+<div class="content">
+<form #AddPreguntaForm=ngForm>
+  <h1 class="display-1">Añadir Pregunta Nueva</h1>
+  <h4>ID Examen:</h4>
+  <select class="combo" name="id" id="id" [(ngModel)]="pregunta.examen_id" required>
+      <option value="{{id_exam}}">{{id_exam}}</option>
+    </select>
+<br>
+  <input class="input" type="text" placeholder="Pregunta Sin Titulo"
+   style="margin-bottom: 5px;" [(ngModel)]="pregunta.textquestion" name="textquestion"
+  required>
+<br>
+  <button class="btn btn-success" style="margin-right: 5px;" (click)="addQuestion()"
+  [disabled]="!AddPreguntaForm.valid">
+    Guardar Pregunta
+  </button>
+  <br>
+  <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+</form>
+</div>

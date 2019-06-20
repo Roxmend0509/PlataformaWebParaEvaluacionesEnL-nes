@@ -1,0 +1,37 @@
+<!--
+  Archivo .html donde se encontrara 
+  la lista de los respuestas, donde contiene una tabla 
+  que contienen 3 columnas con los diferentes 
+  datos de los alumnos, como es su ID, Respuesta
+  y sus Acciones que deben tener ya sea como editar y eliminar
+-->
+<div class="content">
+    <h1 class="display-1 titulo">{{title}}{{question_id}}</h1>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+          <th scope="col">Respuesta</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let respuesta of respuestas">
+          <td>{{respuesta.id}}</td>
+          <td>{{respuesta.textanswer}}</td>
+          <td>{{respuesta.AnswerCorrect}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm"  data-toggle="tooltip" 
+            routerLink='/editRespuesta/{{respuesta.id}}'
+            data-placement="right" title="Editar"><i class="far fa-edit fa-lg"></i></button>
+            <button class="btn btn-danger btn-sm" (click)="delete(respuesta.id)" 
+            data-toggle="tooltip" data-placement="right" title="Eliminar">
+              <i class="fas fa-trash-alt fa-lg"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-success btn-lg"  onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
+    </div>
+    
