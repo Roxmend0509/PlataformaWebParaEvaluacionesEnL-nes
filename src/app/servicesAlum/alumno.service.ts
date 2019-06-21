@@ -28,7 +28,7 @@ export class AlumnoService {
 
   put(alumno){
     const headers = new HttpHeaders({'Content-Type':'application/json'});
-    return this.httpClient.put(this.url+'/students/'+alumno.id,alumno,{headers:headers});
+    return this.httpClient.put(this.url+'/user/'+alumno.id,alumno,{headers:headers});
   }
 
   delete(id){

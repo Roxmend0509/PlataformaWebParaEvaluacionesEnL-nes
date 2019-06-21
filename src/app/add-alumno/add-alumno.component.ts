@@ -37,7 +37,9 @@ export class AddAlumnoComponent implements OnInit {
   alumno: Alumno={
     name:null,
     email:null,
-    role:null
+    role:null,
+    password:null,
+    password_confirmation:null
   };
 
   alumnos:Alumno[]; //Se crea una variable de tipo Alumno[]

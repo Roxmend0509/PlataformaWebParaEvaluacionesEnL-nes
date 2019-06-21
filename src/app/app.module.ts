@@ -40,6 +40,7 @@ import { PresentarExamComponent } from './interfaces-Alumnos/presentar-exam/pres
 import { ValueArrayPipe } from './value-array.pipe';
 import { ListCalificacionesComponent } from './interfaces-Alumnos/list-calificaciones/list-calificaciones.component';
 import { ResultadosComponent } from './interfaces-Alumnos/resultados/resultados.component';
+import { DetallesComponent } from './detalles/detalles.component';
 
 
 const routes: Routes=[
@@ -64,6 +65,8 @@ const routes: Routes=[
   { path:'addPregunta', component:AddpreguntaFormComponent,
   canActivate: [AfterLoginService]},
   { path:'form/:id', component:FormAlumnoComponent,
+  canActivate: [AfterLoginService]},
+  { path:'details/:idExa', component:DetallesComponent,
   canActivate: [AfterLoginService]},
   { path:'calificacionesExa/:idAlu', component:ListCalificacionesComponent,
   canActivate: [AfterLoginService]},
@@ -150,6 +153,7 @@ const routes: Routes=[
     ValueArrayPipe,
     ListCalificacionesComponent,
     ResultadosComponent,
+    DetallesComponent,
   ],
   imports: [
     FormsModule,

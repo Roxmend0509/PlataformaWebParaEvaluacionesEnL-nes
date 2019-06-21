@@ -22,6 +22,12 @@ export class ExamService {
     
   }
 
+  
+  getExWCal(id){
+    return this.httpClient.get(this.url+'/ExaWithCal/'+id);
+    
+  }
+
   getExam(id){
     return this.httpClient.get(this.url+'/examUser/'+id);
     
