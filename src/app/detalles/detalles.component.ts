@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExamService } from '../servicesExamen/examen.service';
 import { ActivatedRoute } from '@angular/router';
 import { Examen } from '../interface/examen';
+import { Detalles } from '../interface/detalles';
 
 @Component({
   selector: 'app-detalles',
@@ -9,9 +10,10 @@ import { Examen } from '../interface/examen';
   styleUrls: ['./detalles.component.css']
 })
 export class DetallesComponent implements OnInit {
-  examen_id:any;
+  user_id:any;
   sub:any;
   examenes:Examen[];
+  detalles:Detalles[];
 
 
   constructor(private examen:ExamService,
@@ -20,10 +22,10 @@ export class DetallesComponent implements OnInit {
     }
 
 
-    getUser(examen_id){
-      this.examen.getExWCal(examen_id).
-      subscribe((data: Examen[]) => {
-        this.examenes=data;
+    getUser(user_id){
+      this.examen.getExWCal(user_id).
+      subscribe((data: Detalles[]) => {
+        this.detalles=data;
       })
      }
 
@@ -32,8 +34,8 @@ export class DetallesComponent implements OnInit {
 
   getIdCal(){
     this.sub = this.activatedRoute.params.subscribe(params => {
-      this.examen_id = +params['idExa']; 
-      this.getUser(this.examen_id);
+      this.user_id = +params['idExa']; 
+      this.getUser(this.user_id);
      
   });
   }

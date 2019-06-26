@@ -12,13 +12,4 @@ export class Calificaciones{
         key:"string";
         duration:"number";
 }]
-
-"users":[{
-    id:"number";
-    name:"string";
-    lastname:"string";
-    email:"string";
-    phone:"number";
-    password:"string";
-}]
 }

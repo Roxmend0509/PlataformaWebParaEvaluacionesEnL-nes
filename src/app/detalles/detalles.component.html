@@ -1,10 +1,7 @@
-<div class="content">
-<form>
-        MOSTRAR DETALLES DE LAS CALIFICACIONES Y SI NO HAN REALIZADO EL EXAMEN
-<br>
-        <button class="btn btn-primary btn-lg" style="margin-top: 5px;" onClick="history.back()"><i class="fas fa-arrow-left"></i> Regresar</button>
-
-</form>
-
-</div>
-
+<div class="container datos text-center">
+          <div *ngFor="let make of detalle.makes">
+                {{make.complete}}
+          </div>
+          <button class="btn btn-success" onClick="history.back()" >Regresar</button>
+          </div>
+        
