@@ -20,6 +20,11 @@ export class AlumnoService {
     
   }
 
+  search(email){
+    return this.httpClient.get(this.url+'/search/'+email);
+    
+  }
+
   save(alumno:Alumno){
     const headers = new HttpHeaders({'Content-Type':'application/json'});
     return this.httpClient.post(this.url+'/students',alumno,{headers:headers});
