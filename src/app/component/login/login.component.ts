@@ -41,7 +41,7 @@ handleError(error){
 handleResponse(data){
   this.Token.handle(data);
   this.Auth.changeAuthStatus(true);
-  this.router.navigateByUrl('/profile');
+  this.router.navigateByUrl('/home');
 }
 
   ngOnInit() {

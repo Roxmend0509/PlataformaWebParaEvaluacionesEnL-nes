@@ -21,7 +21,6 @@ export class ListCalificacionesComponent implements OnInit {
     private alu:AlumnoService,
     private activatedRoute:ActivatedRoute) { 
       this.getIdCal();
-      console.log(this.alumnos);
     }
 
 

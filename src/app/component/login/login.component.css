@@ -23,20 +23,19 @@
   }
   .card{
     background: white;
-    padding: 1rem;
     text-align: center;
     position: relative;
     left:3rem;
     border-radius: 2rem;
+    padding: 5rem;
+    text-align: center;
   }
   form{
  background: white;
-  padding: 1rem;
-  width: 80%;
-  position: relative;
-  left: 9rem;
-  text-align: center;
+  width: 100%;
   border-radius: 2rem;
+  padding: 1rem;
+  text-align: center;
   }
 
   .input{

@@ -14,8 +14,13 @@ export class AlumnoComponent implements OnInit {
   alumnos:Alumno[];
   API_ENDPOINT= 'http://127.0.0.1:8000';
 
+  public form ={
+    buscar:null
+  };
+
   constructor(private alumnoService: AlumnoService) {
-  this.getAlumnos();   
+    
+  this.getAlumnos();  
   }
 
      getAlumnos(){
@@ -36,8 +41,22 @@ export class AlumnoComponent implements OnInit {
       });
     }
     }
+
+    buscar(){
+      if(this.form.buscar=="" || this.form.buscar==null){
+        this.getAlumnos();
+      }else{
+        this.alumnoService.search(this.form.buscar).
+      subscribe((data: Alumno[]) => {
+        this.alumnos=data;
+      });
+      }
+      
+    }
      
   }
+
+
      
 
   

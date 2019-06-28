@@ -3,6 +3,8 @@ import { ExamService } from '../servicesExamen/examen.service';
 import { ActivatedRoute } from '@angular/router';
 import { Examen } from '../interface/examen';
 import { Detalles } from '../interface/detalles';
+import { AlumnoService } from '../servicesAlum/alumno.service';
+import { Alumno } from '../interface/alumno';
 
 @Component({
   selector: 'app-detalles',
@@ -13,10 +15,12 @@ export class DetallesComponent implements OnInit {
   user_id:any;
   sub:any;
   examenes:Examen[];
-  detalles:Detalles[];
+  detalles:Detalles[]=null;
+  alumnos:Alumno[];
 
 
   constructor(private examen:ExamService,
+    private alu:AlumnoService,
     private activatedRoute:ActivatedRoute) { 
       this.getIdCal();
     }
@@ -29,6 +33,13 @@ export class DetallesComponent implements OnInit {
       })
      }
 
+     getUser2(user_id){
+      this.alu.getStudent(user_id).
+      subscribe((data: Alumno[]) => {
+        this.alumnos=data;
+      })
+     }
+
   ngOnInit() {
   }
 
@@ -36,6 +47,7 @@ export class DetallesComponent implements OnInit {
     this.sub = this.activatedRoute.params.subscribe(params => {
       this.user_id = +params['idExa']; 
       this.getUser(this.user_id);
+      this.getUser2(this.user_id);
      
   });
   }

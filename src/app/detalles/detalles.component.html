@@ -1,16 +1,24 @@
 <div class="container datos text-center">
+        <div class="col-md-6 offset-md-3">
+          <div class="card text-white bg-light mb-3">
+                <div class="card-header text-center">
+                    <div *ngFor="let alumno of alumnos">
+                    <h2 type="text" class="h5">{{alumno.name}}</h2>
+                  </div>
+              </div>
+            </div>
+          </div>
             <div *ngIf="detalles">
-                        <h1>{{ detalles.name }}</h1>
-                        <h2>{{ detalles.email }}</h2>
-                        <hr>
-                        <div *ngFor="let make of detalles.makes">
-                            <p>
-                              EXAMEN {{make.complete}} <br>
-                                Nombre: {{ make.examenes[0].name }} <br>
-                                Calificación: {{ make.examenes[0].calificaciones[0].calificacion }}
-                            </p>
-                        </div>
-                    </div>
+              <div *ngFor="let detalle of detalles">
+                  <div *ngFor="let examen of detalle.examenes">
+                  <h1>{{ detalle.calificacion }}</h1>
+                  <h2>{{ detalle.aprobation }}</h2>
+                      <p>
+                        NOMBRE DEL EXAMEN {{examen.name}} <br>
+                      </p>
+                  </div>
+              </div>
+              </div>  
           <button class="btn btn-success" onClick="history.back()" >Regresar</button>
           </div>
         
