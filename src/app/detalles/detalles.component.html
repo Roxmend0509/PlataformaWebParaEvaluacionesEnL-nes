@@ -1,24 +1,27 @@
-<div class="container datos text-center">
+<div class="content datos text-center">
         <div class="col-md-6 offset-md-3">
           <div class="card text-white bg-light mb-3">
                 <div class="card-header text-center">
                     <div *ngFor="let alumno of alumnos">
-                    <h2 type="text" class="h5">{{alumno.name}}</h2>
+                    <h2 type="text" class="h5">Alumno: {{alumno.name}}</h2>
+                    <h2 type="text" class="h5">Correo: {{alumno.email}}</h2>
                   </div>
               </div>
             </div>
           </div>
+          <div class="col-md-6 offset-md-3">
+          <div class="card text-white bg-light mb-3">
             <div *ngIf="detalles">
               <div *ngFor="let detalle of detalles">
                   <div *ngFor="let examen of detalle.examenes">
-                  <h1>{{ detalle.calificacion }}</h1>
-                  <h2>{{ detalle.aprobation }}</h2>
-                      <p>
-                        NOMBRE DEL EXAMEN {{examen.name}} <br>
-                      </p>
+                  <h1>NOMBRE DEL EXAMEN: <br> {{examen.name}} <br></h1>
+                  <h2>CALIFICACIÓN: {{ detalle.calificacion }}</h2>
+                  <h3>{{ detalle.aprobation }}</h3>
+                     </div>
                   </div>
               </div>
-              </div>  
+              </div> 
+            </div> 
           <button class="btn btn-success" onClick="history.back()" >Regresar</button>
           </div>
         
