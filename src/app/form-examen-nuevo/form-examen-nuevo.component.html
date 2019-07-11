@@ -20,11 +20,6 @@
   id="key"  name="key" [(ngModel)]="examen.key" style="margin-bottom:5px;"
   required>
   <br>
-  <input type="time" class="input time" contenteditable="true"
-  id="duration"  name="duration" [(ngModel)]="examen.duration" 
-  style="margin-bottom:5px;"
-  required>
-  <br>
   <button class="btn btn-success" (click)="addExam()" style="margin-top:5px;"
   [disabled]="!AddExamenForm.valid">
     Guardar Nuevo Examen

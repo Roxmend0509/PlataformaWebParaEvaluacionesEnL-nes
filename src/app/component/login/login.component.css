@@ -30,6 +30,13 @@
     padding: 5rem;
     text-align: center;
   }
+
+  @media (max-width: 350px) {
+    content{
+      padding: 3rem;
+       }
+
+   }
   form{
  background: white;
   width: 100%;
@@ -37,12 +44,45 @@
   padding: 1rem;
   text-align: center;
   }
+  @media (max-width: 800px) {
+    form{
+      width: 50%;
+      position: relative;
+      left: 30%;
+       }
+      .form-group{
+        position: relative;
+        left: 10%;
+       }
+
+   }
+   @media (max-width: 1200px) {
+      .form-group{
+        position: relative;
+        left: 10%;
+       }
+
+   }
+
+   @media (max-width: 1500px) {
+    .form-group{
+      position: relative;
+      left: 10%;
+     }
+
+ }
 
   .input{
       width: 100%;
+      position: center;
   }
+
   .col-form-label{
       text-align: left;
+  }
+
+  .forget{
+    position: right;
   }
 
   

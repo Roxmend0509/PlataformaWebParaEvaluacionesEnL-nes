@@ -28,7 +28,6 @@ import { ListClaveComponent } from './list-clave/list-clave.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
-import { ProfileComponent } from './component/profile/profile.component';
 import { RequestResetComponent } from './component/password/request-reset/request-reset.component';
 import { ResponseResetComponent } from './component/password/response-reset/response-reset.component';
 import { JarwisService } from './Services/jarwis.service';
@@ -106,11 +105,6 @@ const routes: Routes=[
     canActivate: [AfterLoginService]
   },
   {
-    path:'profile',
-    component:ProfileComponent,
-    canActivate: [AfterLoginService]
-  },
-  {
     path:'request-password-reset',
     component: RequestResetComponent,
     canActivate: [BeforeLoginService]
@@ -146,7 +140,6 @@ const routes: Routes=[
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-    ProfileComponent,
     RequestResetComponent,
     ResponseResetComponent,
     PresentarExamComponent,

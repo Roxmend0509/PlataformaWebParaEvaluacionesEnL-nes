@@ -1,8 +1,6 @@
-<div class="content">
-  <div class="card float-center">
-    <div class="card-header"><h1 class="display-1 titulo">Iniciar Sesión</h1></div>
-    <div class="card-body">
+<div class="content float-center">
       <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+          <h1 class="display-1 titulo">INICIAR SESIÓN</h1>
         <div class="alert alert-danger" [hidden]="!error">
           {{error}}
         </div>
@@ -22,13 +20,9 @@
         </div>
         <div class="form-group row">
           <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary" (disable)="!loginForm.valid">Aceptar</button>
+            <button type="submit" class="btn btn-primary float-center" (disable)="!loginForm.valid">Aceptar</button>
           </div>
         </div>
-        <small class="float-right">
-          <a routerLink="/request-password-reset">Olvide mi Contraseña</a>
-        </small>
+          <a class="forget" routerLink="/request-password-reset">Olvide mi Contraseña</a>
       </form>
-    </div>
-  </div>
 </div>

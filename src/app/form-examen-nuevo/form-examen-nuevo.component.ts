@@ -41,8 +41,7 @@ export class FormExamenNuevoComponent implements OnInit {
     examen: Examen ={
       name:null,
       description:null,
-      key:null,
-      duration:null
+      key:null
     };
 
    

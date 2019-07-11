@@ -9,7 +9,6 @@ export class Examen{
     name:string;
     description:string;
     key:string;
-    duration:number;
     created_at?:string;
     updated_at?:string; 
 }

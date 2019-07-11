@@ -41,3 +41,19 @@ table td,table th{
 td{
     color: black;
 }
+
+@media (max-width: 1200px) {
+    .form-inline{
+      position: relative;
+      left: 10%;
+     }
+
+ }
+
+ @media (max-width: 1500px) {
+    .form-inline{
+      position: relative;
+      left: 10%;
+     }
+
+ }

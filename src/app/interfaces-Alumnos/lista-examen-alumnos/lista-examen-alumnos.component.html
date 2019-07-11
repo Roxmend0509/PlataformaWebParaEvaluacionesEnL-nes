@@ -5,7 +5,6 @@
         <tr>
             <th scope="col">Examen</th>
             <th scope="col">Descripción</th>
-            <th scope="col">Duración</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -13,7 +12,6 @@
         <tr *ngFor="let exam of exams">
           <td>{{exam.name}}</td>
           <td>{{exam.description}}</td>
-          <td>{{exam.duration}}</td>
           <td>
             <button class="btn btn-primary btn-sm" style="margin: 2px;"
             data-toggle="tooltip" data-placement="right" title="Presentar Examen" routerLink='/presentarExamen/{{user_id}}/{{exam.id}}'>

@@ -33,6 +33,12 @@ form{
   left:19rem;
   border-radius: 2rem;
 }
+@media (max-width: 1200px) {
+  form{
+    position: relative;
+    left: 25%;
+   }
+  }
 
 .input::placeholder{
   color:rgb(39, 38, 38);
